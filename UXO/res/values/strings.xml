@@ -24,4 +24,5 @@
     </string-array>
     <string name="blast_radius">Radius</string>
     <string name="meters">Meters</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
