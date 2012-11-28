@@ -46,10 +46,16 @@ public class MainActivity extends Activity {
 			//String temp = (String) weightText.getText();
 			//weight = Integer.getInteger(temp);
 		}
+		String temp = (String) weightText.getText();
 	}
 	
-	public void onExplosiveType(View v){
-		
+	public void calculate(View v){
+		weight = 55;
+		System.out.println("Type: " + explosiveList.getSelectedItem());
+		System.out.println("Weight: " + weight);
+		System.out.println("Blast: " + calculationType.getSelectedItem());
+		blastType = (String) calculationType.getSelectedItem();
+		calculateBlastRadius();
 	}
 	
 	public void onCalcMethodClicked(View v){

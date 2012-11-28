@@ -60,4 +60,13 @@
         android:text="@string/blast_radius"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <Button
+        android:id="@+id/calcButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/blast_radius"
+        android:layout_centerHorizontal="true"
+        android:onClick="calculate"
+        android:text="@string/calculate" />
+
 </RelativeLayout>

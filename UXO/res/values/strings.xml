@@ -12,7 +12,7 @@
         <item >Dynamite</item>
         <item >Amonimum Nitrate</item>
     </string-array>
-    <string name="weight">Weight in KG</string>
+    <string name="weight">0</string>
     <string name="calculate">Calculate</string>
     <string name="KG">KG</string>
     <string-array name="calc_method">
