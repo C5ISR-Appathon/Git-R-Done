@@ -2,17 +2,17 @@ package com.team9.uxo;
 
 import java.util.List;
 
-import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 
 import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 
-public class MapsActivity extends Activity {
+public class MapsActivity extends MapActivity {
 	MapView mapView;
 	
 	@Override
@@ -38,7 +38,14 @@ public class MapsActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_maps, menu);
 		return true;
 	}
-	
-	
 
+	@Override
+	protected boolean isRouteDisplayed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
+	
 }
+	

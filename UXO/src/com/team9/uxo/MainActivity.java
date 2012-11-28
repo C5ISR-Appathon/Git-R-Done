@@ -1,6 +1,7 @@
 package com.team9.uxo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -59,7 +60,9 @@ public class MainActivity extends Activity {
 	};
 	
 	public void plot(View v){
+		Intent i = new Intent(this, MapsActivity.class);
 		
+		startActivity(i);
 	}
 
 	private void update() {
