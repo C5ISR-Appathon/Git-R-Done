@@ -12,14 +12,16 @@
         <item >Dynamite</item>
         <item >Amonimum Nitrate</item>
     </string-array>
-    <string name="weight">0</string>
-    <string name="calculate">Calculate</string>
-    <string name="KG">KG</string>
+    <string name="weight">1</string>
+    <string name="calculate">Plot</string>
+    <string name="KG">Kilograms</string>
     <string-array name="calc_method">
-        <item >Blast</item>
-        <item >Frag</item>
+        <item>Preferred evacuation distance</item>
+        <item>Mandatory evacuation distance</item>
+        <item>Permanent hearing loss</item>
+        <item>50% risk of fatality</item>
+        <item>Instant death</item>
     </string-array>
     <string name="blast_radius">Radius</string>
-    <string name="meters">M</string>
-
+    <string name="meters">Meters</string>
 </resources>
