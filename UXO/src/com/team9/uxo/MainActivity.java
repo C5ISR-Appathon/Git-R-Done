@@ -37,24 +37,40 @@ public class MainActivity extends Activity {
 	}
 	
 	public void onWeightClick(View v){
-		System.out.println("Weight: " + weightText.getText());
-		
-		
-		String temp = weightText.getText() + "";
-		weight = Double.valueOf(temp); 
-		System.out.println("Value: " + temp);
+//		System.out.println("Weight: " + weightText.getText());
+//		
+//		
+//		String temp = weightText.getText() + "";
+//		weight = Double.valueOf(temp); 
+//		System.out.println("Value: " + temp);
 	}
+	
+	static double[] TNT_EQUIVELANT = {
+		1.0, 1.2, 1.3, 0.9, 0.82
+	};
 	
 	public void calculate(View v){
 		System.out.println("Type: " + explosiveList.getSelectedItem());
 		System.out.println("Weight: " + weight);
 		System.out.println("Blast: " + calculationType.getSelectedItem());
-		blastType = (String) calculationType.getSelectedItem();
-		calculateBlastRadius();
+//		blastType = (String) calculationType.getSelectedItem();
+		
+		double k = TNT_EQUIVELANT[(int)explosiveList.getSelectedItemId()];
+		double m = Double.valueOf(String.valueOf(weightText.getText()));
+		Integer d;
+		long method = calculationType.getSelectedItemId();
+		if(method == 0) {
+			d = (int)(444 * Math.pow(k * m, (1.0/6)));
+		}
+		else {
+			BlastCalculator calc = new BlastCalculator();
+			d = calc.distance(k, m, method - 1);
+		}
+		radius.setText(d.toString());
 	}
 	
 	public void onCalcMethodClicked(View v){
-		blastType = (String) calculationType.getSelectedItem();
+//		blastType = (String) calculationType.getSelectedItem();
 	}
 	
 	public double calculateBlastRadius(){

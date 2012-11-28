@@ -16,10 +16,12 @@
     <string name="calculate">Calculate</string>
     <string name="KG">KG</string>
     <string-array name="calc_method">
-        <item >Blast</item>
-        <item >Frag</item>
+        <item>Preferred evacuation distance</item>
+        <item>Mandatory evacuation distance</item>
+        <item>Permanent hearing loss</item>
+        <item>50% risk of fatality</item>
+        <item>Instant death</item>
     </string-array>
     <string name="blast_radius">Radius</string>
     <string name="meters">M</string>
-
 </resources>
