@@ -15,5 +15,11 @@
     <string name="weight">Weight in KG</string>
     <string name="calculate">Calculate</string>
     <string name="KG">KG</string>
+    <string-array name="calc_method">
+        <item >Blast</item>
+        <item >Frag</item>
+    </string-array>
+    <string name="blast_radius">Radius</string>
+    <string name="meters">M</string>
 
 </resources>

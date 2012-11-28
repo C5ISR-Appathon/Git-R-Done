@@ -11,11 +11,11 @@
         android:layout_alignBaseline="@+id/explosive_weight"
         android:layout_alignBottom="@+id/explosive_weight"
         android:layout_alignParentRight="true"
-        android:text="@string/weight" />
+        android:text="@string/KG" />
 
     <Spinner
         android:id="@+id/explosive_list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -27,9 +27,37 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/explosive_list"
+        android:layout_toLeftOf="@+id/weight_text"
         android:ems="120"
         android:inputType="number"
         android:onClick="onWeightClick"
         android:text="@string/weight" />
+
+    <TextView
+        android:id="@+id/meters_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/blast_radius"
+        android:layout_alignBottom="@+id/blast_radius"
+        android:layout_alignParentRight="true"
+        android:text="@string/meters"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/calc_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weight_text"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/calc_method" />
+
+    <TextView
+        android:id="@+id/blast_radius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/calc_method"
+        android:text="@string/blast_radius"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
