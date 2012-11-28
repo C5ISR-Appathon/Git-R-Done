@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	private Spinner explosiveList;
 	private TextView weightText;
-	private int weight;
+	private double weight;
 	private Spinner calculationType;
 	private String blastType;
 	private TextView radius;
@@ -38,19 +38,14 @@ public class MainActivity extends Activity {
 	
 	public void onWeightClick(View v){
 		System.out.println("Weight: " + weightText.getText());
-		System.out.println("Resource: " + getString(R.string.weight));
-		if(weightText.getText().equals(getString(R.string.weight))){
-			System.out.println("match");
-			weightText.setText("test");
-		} else {
-			//String temp = (String) weightText.getText();
-			//weight = Integer.getInteger(temp);
-		}
-		String temp = (String) weightText.getText();
+		
+		
+		String temp = weightText.getText() + "";
+		weight = Double.valueOf(temp); 
+		System.out.println("Value: " + temp);
 	}
 	
 	public void calculate(View v){
-		weight = 55;
 		System.out.println("Type: " + explosiveList.getSelectedItem());
 		System.out.println("Weight: " + weight);
 		System.out.println("Blast: " + calculationType.getSelectedItem());
@@ -73,7 +68,7 @@ public class MainActivity extends Activity {
 		 return x;
 	}
 	
-	private double convertToTNT(int weight) {
+	private double convertToTNT(double weight) {
 		String explosiveType = (String) explosiveList.getSelectedItem();
 		if(explosiveType.equals("C4")){
 			return  (weight *1.2);
