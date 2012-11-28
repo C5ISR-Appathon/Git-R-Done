@@ -77,6 +77,8 @@ public class MapsOverlay extends ItemizedOverlay {
             Point pt = new Point();
             projection.toPixels(pt1,pt);
 
+            int radius = (int) (mapV.getProjection().metersToEquatorPixels(50) * (1/ Math.cos(Math.toRadians(lat/100000))));
+           
             GeoPoint newGeos = new GeoPoint(lat+(10000),lng); // adjust your radius accordingly
             Point pt2 = new Point();
             projection.toPixels(newGeos,pt2);
@@ -87,12 +89,12 @@ public class MapsOverlay extends ItemizedOverlay {
             circlePaint.setColor(Color.RED);
             circlePaint.setStyle(Style.FILL_AND_STROKE);
             circlePaint.setAlpha(25);
-            canvas.drawCircle((float)pt.x, (float)pt.y, circleRadius, circlePaint);
+            canvas.drawCircle((float)pt.x, (float)pt.y, radius, circlePaint);
             
 
             circlePaint.setColor(Color.RED);
             circlePaint.setStyle(Style.STROKE);
-            canvas.drawCircle((float)pt.x, (float)pt.y, circleRadius, circlePaint);
+            canvas.drawCircle((float)pt.x, (float)pt.y, radius, circlePaint);
 
             Bitmap markerBitmap = BitmapFactory.decodeResource(mContext.getResources(),R.drawable.red_cross);
             canvas.drawBitmap(markerBitmap,pt.x,pt.y-markerBitmap.getHeight(),null);
