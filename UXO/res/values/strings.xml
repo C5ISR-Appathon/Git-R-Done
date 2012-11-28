@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UXO</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="explosive_type">explosive_type</string>
+    <string-array name="explosive_list">
+        <item >TNT</item>
+        <item >C4</item>
+        <item >Composition B</item>
+        <item >Dynamite</item>
+        <item >Amonimum Nitrate</item>
+    </string-array>
+    <string name="weight">Weight in KG</string>
+    <string name="calculate">Calculate</string>
+    <string name="KG">KG</string>
+
+</resources>
