@@ -11,6 +11,7 @@
         android:layout_alignBaseline="@+id/explosive_weight"
         android:layout_alignBottom="@+id/explosive_weight"
         android:layout_alignParentRight="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/KG" />
 
     <Spinner
@@ -30,7 +31,6 @@
         android:layout_toLeftOf="@+id/weight_text"
         android:ems="120"
         android:inputType="number"
-        android:onClick="onWeightClick"
         android:text="@string/weight" />
 
     <TextView
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/blast_radius"
         android:layout_centerHorizontal="true"
-        android:onClick="calculate"
+        android:onClick="plot"
         android:text="@string/calculate" />
 
 </RelativeLayout>
