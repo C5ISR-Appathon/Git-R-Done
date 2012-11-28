@@ -3,6 +3,7 @@ package com.team9.uxo;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class MainActivity extends Activity {
 		calculationType = (Spinner)findViewById(R.id.calc_method);
 		radius = (TextView) findViewById(R.id.blast_radius);
 		
+	
 	}
 
 	@Override
@@ -38,11 +40,14 @@ public class MainActivity extends Activity {
 	
 	public void onWeightClick(View v){
 		System.out.println("Weight: " + weightText.getText());
-		
-		
 		String temp = weightText.getText() + "";
-		weight = Double.valueOf(temp); 
+		if(temp.equals("")){
+			weight = 0.0;
+		} else {
+			weight = Double.valueOf(temp);
+		}
 		System.out.println("Value: " + temp);
+		calculateBlastRadius();
 	}
 	
 	public void calculate(View v){
@@ -59,6 +64,7 @@ public class MainActivity extends Activity {
 	
 	public double calculateBlastRadius(){
 		double x =0;
+		blastType = (String) calculationType.getSelectedItem();
 		 if(blastType.equals("Blast")){
 			 x = calcTypeBlast(convertToTNT(weight));
 		 } else if(blastType.equals("Frag")) {
