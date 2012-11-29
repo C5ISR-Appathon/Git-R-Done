@@ -12,6 +12,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.ItemizedOverlay;
@@ -24,6 +25,8 @@ public class MapsOverlay extends ItemizedOverlay {
 	Context mContext;
 	int lat;
 	int lng;
+	
+	public int rad =0;
 	
 	
 	public MapsOverlay(Drawable defaultMarker) {
@@ -77,7 +80,7 @@ public class MapsOverlay extends ItemizedOverlay {
             Point pt = new Point();
             projection.toPixels(pt1,pt);
 
-            int radius = (int) (mapV.getProjection().metersToEquatorPixels(50) * (1/ Math.cos(Math.toRadians(lat/100000))));
+            int radius = (int) (mapV.getProjection().metersToEquatorPixels(rad) * (1/ Math.cos(Math.toRadians(lat/100000))));
            
             GeoPoint newGeos = new GeoPoint(lat+(10000),lng); // adjust your radius accordingly
             Point pt2 = new Point();

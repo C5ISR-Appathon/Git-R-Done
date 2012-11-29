@@ -30,6 +30,13 @@ public class MapsActivity extends MapActivity {
 	    OverlayItem overlayitem = new OverlayItem(point, "Hola, Mundo!", "I'm in Mexico City!");
 	    itemizedoverlay.addOverlay(overlayitem);
 	    mapOverlays.add(itemizedoverlay);
+	    
+	    Bundle extras = getIntent().getExtras(); 
+	    System.out.println("Get Intent done");
+	    if(extras !=null)
+	    {
+	    	itemizedoverlay.rad = (int) extras.getDouble("radius");
+	    }
 	}
 
 	@Override
