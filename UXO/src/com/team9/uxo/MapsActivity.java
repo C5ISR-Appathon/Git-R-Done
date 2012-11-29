@@ -37,12 +37,15 @@ public class MapsActivity extends MapActivity {
 	    Drawable drawable = this.getResources().getDrawable(R.drawable.red_cross);
 	    MapsOverlay itemizedoverlay = new MapsOverlay(drawable, this);
 	    
+	    Bundle extras = getIntent().getExtras(); 
+	    
 	    GeoPoint point = new GeoPoint(19240000,-99120000);
-	    OverlayItem overlayitem = new OverlayItem(point, "Hola, Mundo!", "I'm in Mexico City!");
+	    
+	    OverlayItem overlayitem = new OverlayItem(point, "Type: ", extras.getString("type"));
 	    itemizedoverlay.addOverlay(overlayitem);
 	    mapOverlays.add(itemizedoverlay);
 	    
-	    Bundle extras = getIntent().getExtras(); 
+	    
 	    System.out.println("Get Intent done");
 	    if(extras !=null)
 	    {
@@ -50,21 +53,21 @@ public class MapsActivity extends MapActivity {
 	    }
 	    
 //	 // Get the location manager
-//	    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+	    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 //	    // Define the criteria how to select the locatioin provider -> use
 //	    // default
-//	    Criteria criteria = new Criteria();
-//	    provider = locationManager.getBestProvider(criteria, false);
-//	    Location location = locationManager.getLastKnownLocation(provider);
+	    Criteria criteria = new Criteria();
+	    provider = locationManager.getBestProvider(criteria, false);
+	    Location location = locationManager.getLastKnownLocation(provider);
 //
 //	    // Initialize the location fields
-//	    if (location != null) {
-//	      System.out.println("Provider " + provider + " has been selected.");
-//	      onLocationChanged(location);
-//	    } else {
-//	      latituteField.setText("Location not available");
-//	      longitudeField.setText("Location not available");
-//	    }
+	    if (location != null) {
+	      System.out.println("Provider " + provider + " has been selected.");
+	      onLocationChanged(location);
+	    } else {
+	      //latituteField.setText("Location not available");
+	      //longitudeField.setText("Location not available");
+	    }
 	  }
 	    
 

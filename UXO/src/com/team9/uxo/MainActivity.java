@@ -62,6 +62,7 @@ public class MainActivity extends Activity {
 	public void plot(View v){
 		Bundle bundle = new Bundle();
 		bundle.putDouble("radius", Double.valueOf(String.valueOf(radius.getText())));
+		bundle.putString("type", (String) explosiveList.getSelectedItem());
 		Intent i = new Intent(this, MapsActivity.class);
 		i.putExtras(bundle);
 		startActivity(i);
